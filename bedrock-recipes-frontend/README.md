@@ -1,85 +1,73 @@
-# Create PID App
+# Bedrock Recipes Frontend
 
-A CLI tool to quickly scaffold a modern React application with an opinionated setup for productivity and developer experience.
+A modern frontend application built with React, Vite, and TypeScript. This project provides a solid foundation for building scalable web apps, featuring type-safe routing, data fetching, and a beautiful UI with Tailwind CSS and Shadcn UI components.
 
 ## Features
 
-The generated application comes pre-configured with:
+- ⚡ Vite for fast development and builds
+- ⚛️ React with TypeScript
+- 🧭 TanStack Router for type-safe routing
+- 🔄 TanStack Query for data fetching and caching
+- 🎨 Tailwind CSS for utility-first styling
+- 🧩 Shadcn UI components (Radix UI + Tailwind)
+- 🧹 Prettier for code formatting
 
-- ⚡ [Vite](https://vitejs.dev/) - Next generation frontend tooling
-- ⚛️ [React](https://react.dev/) with TypeScript
-- 🧭 [TanStack Router](https://tanstack.com/router) - Type-safe routing
-- 🔄 [TanStack Query](https://tanstack.com/query) - Data fetching and caching
-- 🎨 [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- 🌼 [DaisyUI](https://daisyui.com/) - Tailwind CSS component library (optional)
-- 🎯 [Shadcn UI](https://ui.shadcn.com/) - Re-usable components built with Radix UI and Tailwind CSS (optional)
-- 🧹 [Prettier](https://prettier.io/) with Tailwind plugin - Code formatting
-- 👨‍💻 VS Code configurations and recommended extensions
+## Getting Started
 
-## Requirements
+### Prerequisites
 
 - [Bun](https://bun.sh/) (latest version)
-- [VS Code](https://code.visualstudio.com/) (recommended)
+- [Node.js](https://nodejs.org/) (if not using Bun)
 
-## Installation
-
-```bash
-# Install globally
-bun add -g @compucloud-mx/create-pid-app
-
-# Or use directly with bunx
-bunx @compucloud-mx/create-pid-app
-```
-
-## Usage
+### Install dependencies
 
 ```bash
-# Run the CLI
-create-pid-app
-
-# Or use with bunx
-bunx @compucloud-mx/create-pid-app
+bun install
 ```
 
-Follow the interactive prompts:
+### Start the development server
 
-1. Enter your project name
-2. Choose whether to initialize a git repository
-3. Choose whether to open the project in VS Code
-4. Select your preferred design system (None, DaisyUI, or Shadcn)
+```bash
+bun run dev
+```
 
-The CLI will:
+### Build for production
 
-1. Create a new Vite + React + TypeScript project
-2. Install and configure all dependencies
-3. Set up routing with TanStack Router
-4. Configure Tailwind CSS
-5. Install and configure your chosen design system (if selected)
-6. Set up Prettier with Tailwind plugin
-7. Configure VS Code settings and recommended extensions
-8. Initialize a git repository (if selected)
-9. Open the project in VS Code (if selected)
+```bash
+bun run build
+```
+
+### Preview production build
+
+```bash
+bun run preview
+```
 
 ## Project Structure
 
 ```
-my-pid-app/
-├── node_modules/
-├── public/
-├── src/
-│   ├── routes/
-│   │   ├── __root.tsx
-│   │   └── index.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── routeTree.gen.ts (generated)
-├── .vscode/
-│   ├── settings.json
-│   └── extensions.json
-├── .gitignore
-├── .prettierrc
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+/bedrock-recipes-frontend
+├── public/              # Static assets
+├── src/                 # Source code
+│   ├── assets/          # Images and static files
+│   ├── components/      # Reusable UI components
+│   ├── lib/             # Utility functions
+│   ├── routes/          # App routes (TanStack Router)
+│   ├── index.css        # Global styles
+│   ├── main.tsx         # App entry point
+│   └── routeTree.gen.ts # Generated routing
+├── index.html           # HTML template
+├── package.json         # Project metadata
+├── vite.config.ts       # Vite configuration
+└── ...                  # Other config files
 ```
+
+## Tech Stack
+
+- Vite
+- React
+- TypeScript
+- TanStack Router
+- TanStack Query
+- Tailwind CSS
+- Shadcn UI

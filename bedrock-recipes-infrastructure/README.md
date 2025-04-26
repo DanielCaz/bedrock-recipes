@@ -1,14 +1,54 @@
-# Welcome to your CDK TypeScript project
+# Bedrock Recipes Infrastructure
 
-This is a blank project for CDK development with TypeScript.
+This project contains the AWS CDK (TypeScript) infrastructure for the Bedrock Recipe Generator application.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Overview
 
-## Useful commands
+This CDK app provisions all required AWS resources for the backend, including:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- **Lambda functions** for recipe and image generation using Amazon Bedrock models.
+- **WebSocket API Gateway** for real-time client communication.
+- **Step Functions state machine** to orchestrate recipe and image generation.
+- **S3 bucket** for storing generated images.
+- **IAM roles and policies** for secure access.
+
+## Getting Started
+
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Install AWS CDK globally (if not already done):
+
+   ```bash
+   pnpm add -g aws-cdk
+   ```
+
+3. Bootstrap your AWS environment (if not already done):
+
+   ```bash
+   cdk bootstrap
+   ```
+
+4. Deploy the stack:
+   ```bash
+   cdk deploy
+   ```
+
+## Useful Commands
+
+- `pnpm run build` – Compile TypeScript to JavaScript
+- `pnpm run watch` – Watch for changes and recompile
+- `pnpm run test` – Run unit tests with Jest
+- `cdk synth` – Synthesize the CloudFormation template
+- `cdk diff` – Compare deployed stack with current state
+
+## Project Structure
+
+- `bin/` – Entry point for the CDK app
+- `lib/` – Main stack and resource definitions
+- `lambda/` – Lambda function source code
+- `state-machine/` – Step Functions definitions
+- `test/` – Unit tests
