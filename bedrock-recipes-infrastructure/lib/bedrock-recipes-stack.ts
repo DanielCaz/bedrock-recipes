@@ -6,12 +6,17 @@ import {
   aws_stepfunctions as sfn,
   aws_iam as iam,
   aws_s3 as s3,
+  aws_s3_deployment as s3Deploy,
+  aws_cloudfront as cloudfront,
+  aws_cloudfront_origins as cfOrigins,
 } from "aws-cdk-lib";
 import { ccloud_lambda } from "@compucloud-mx/ccloud-cdk-lib";
 
 export class BedrockRecipesStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
+
+    this.createWebDeployment();
 
     const { lambdaRouteSendMessage, webSocketApiStage, webSocketApiUrl } =
       this.createWebSocketApi();
@@ -183,5 +188,39 @@ export class BedrockRecipesStack extends cdk.Stack {
       webSocketApiStage,
       webSocketApiUrl,
     };
+  }
+
+  private createWebDeployment() {
+    const bucket = new s3.Bucket(this, "web-bucket", {
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+    });
+
+    const distribution = new cloudfront.Distribution(this, "web-distribution", {
+      defaultBehavior: {
+        origin: cfOrigins.S3BucketOrigin.withOriginAccessControl(bucket),
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      },
+      priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
+      defaultRootObject: "index.html",
+      errorResponses: [
+        {
+          httpStatus: 403,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+        },
+      ],
+    });
+
+    new s3Deploy.BucketDeployment(this, "deploy-web", {
+      sources: [s3Deploy.Source.asset("../bedrock-recipes-frontend/dist")],
+      destinationBucket: bucket,
+      distribution: distribution,
+    });
+
+    new cdk.CfnOutput(this, "web-distribution-url", {
+      value: `https://${distribution.distributionDomainName}`,
+      description: "Web Distribution URL",
+    });
   }
 }
