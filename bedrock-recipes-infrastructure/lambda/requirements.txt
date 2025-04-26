@@ -1,0 +1,8 @@
+boto3
+boto3-stubs[dynamodb,s3,stepfunctions,bedrock-runtime,apigatewaymanagementapi]
+black
+flake8
+mypy
+aws-lambda-powertools
+aws-lambda-powertools[tracer]
+aws-lambda-typing

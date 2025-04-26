@@ -1,0 +1,163 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "BedrockRecipesStack" {
+    subgraph "cluster-SubGraph.BedrockRecipesStack" {
+      graph [
+        label = "BedrockRecipesStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      "BedrockRecipesStack/web-socket-api" [
+        label = " web-socket-api",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "BedrockRecipesStack/web-socket-stage" [
+        label = " web-socket-stage",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "BedrockRecipesStack/images-bucket" [
+        label = " images-bucket",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "BedrockRecipesStack/state-machine" [
+        label = " state-machine",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Step-Functions_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "BedrockRecipesStack/web-socket-send-message-lambda/web-socket-send-message-lambda" [
+        label = " web socket send\nmessage lambda",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+      "BedrockRecipesStack/generate-recipe-lambda/generate-recipe-lambda" [
+        label = " generate recipe\nlambda",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+      "BedrockRecipesStack/generate-image-lambda/generate-image-lambda" [
+        label = "\ngenerate-image-lambda",
+        fontsize = 12,
+        image = "/home/danidan/.cache/pnpm/dlx/d22899a0b9387a8621ed523ec27f0d1066dc5ac0517ba35bf8b9c2ec942c0802/19672f0117d-2407/node_modules/.pnpm/cdk-dia@0.11.0_@aws-cdk+cloud-assembly-schema@1.204.0_@aws-cdk+cx-api@1.204.0_@aws-cdk+_8040ed3ba7753995700c6d681dbbdfd8/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+    }
+  }
+  "BedrockRecipesStack/web-socket-api" -> "BedrockRecipesStack/web-socket-send-message-lambda/web-socket-send-message-lambda" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/web-socket-stage" -> "BedrockRecipesStack/web-socket-api" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/state-machine" -> "BedrockRecipesStack/generate-recipe-lambda/generate-recipe-lambda" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/state-machine" -> "BedrockRecipesStack/generate-image-lambda/generate-image-lambda" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/web-socket-send-message-lambda/web-socket-send-message-lambda" -> "BedrockRecipesStack/web-socket-api" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/web-socket-send-message-lambda/web-socket-send-message-lambda" -> "BedrockRecipesStack/state-machine" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/generate-recipe-lambda/generate-recipe-lambda" -> "BedrockRecipesStack/web-socket-api" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/generate-image-lambda/generate-image-lambda" -> "BedrockRecipesStack/web-socket-api" [
+    dir = "both",
+  ];
+  "BedrockRecipesStack/generate-image-lambda/generate-image-lambda" -> "BedrockRecipesStack/images-bucket" [
+    dir = "both",
+  ];
+}
